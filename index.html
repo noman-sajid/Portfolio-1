@@ -17,7 +17,6 @@
       overflow-x: hidden;
     }
 
-    /* New blue-amber gradient */
     .gradient-text {
       background: linear-gradient(90deg, #3b82f6, #f59e0b);
       -webkit-background-clip: text;
@@ -36,13 +35,11 @@
       border-color: #f59e0b55;
     }
 
-    /* Syntax highlighting with blue hue */
     .syntax-key { color: #f59e0b; }
     .syntax-value { color: #60a5fa; }
     .syntax-string { color: #93c5fd; }
     .syntax-comment { color: #6b7280; }
 
-    /* Editor window aesthetic */
     .editor-bg {
       background: linear-gradient(180deg, #15161a, #0f1013);
       border: 1px solid #1e293b;
@@ -64,6 +61,21 @@
       .hero-grid {
         flex-direction: column-reverse;
       }
+    }
+
+    /* Modal styling */
+    #previewModal {
+      display: none;
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.85);
+    }
+
+    #previewModal.active {
+      display: flex;
+    }
+
+    #previewFrame {
+      border: none;
     }
   </style>
 </head>
@@ -123,20 +135,30 @@
       <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
         <h3 class="text-xl font-semibold mb-3 text-blue-400">Habisium</h3>
         <p class="text-gray-400 text-sm mb-4">Offline-first habit tracker built with React, Redux Toolkit, and Workbox.</p>
-        <a href="#" class="text-amber-400 text-sm hover:underline">View Project →</a>
+        <button onclick="openPreview('https://habisium.vercel.app/')" class="text-amber-400 text-sm hover:underline cursor-pointer">View Project →</button>
       </div>
+
       <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
-        <h3 class="text-xl font-semibold mb-3 text-blue-400">E-commerce Platform</h3>
-        <p class="text-gray-400 text-sm mb-4">Full-stack MERN platform with authentication, filters, and sleek UI.</p>
-        <a href="#" class="text-amber-400 text-sm hover:underline">View Project →</a>
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Personal Site</h3>
+        <p class="text-gray-400 text-sm mb-4">Simple testing website built with HTML, CSS, and JS for early experimentation.</p>
+        <button onclick="openPreview('https://noman-sajid.github.io/personal-site/')" class="text-amber-400 text-sm hover:underline cursor-pointer">View Project →</button>
       </div>
+
       <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
-        <h3 class="text-xl font-semibold mb-3 text-blue-400">Interactive Portfolio</h3>
-        <p class="text-gray-400 text-sm mb-4">Scroll-based animated portfolio using GSAP and Tailwind transitions.</p>
-        <a href="#" class="text-amber-400 text-sm hover:underline">View Project →</a>
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Auto Checkpoint</h3>
+        <p class="text-gray-400 text-sm mb-4">Professional automotive service site built for client showcasing car services.</p>
+        <button onclick="openPreview('http://www.auto-checkpoint.co.uk/')" class="text-amber-400 text-sm hover:underline cursor-pointer">View Project →</button>
       </div>
     </div>
   </section>
+
+  <!-- Iframe Modal -->
+  <div id="previewModal" class="fixed inset-0 hidden items-center justify-center z-40">
+    <div class="relative w-11/12 h-4/5 md:w-2/3 md:h-3/4 bg-[#0d0d0d] glow-border rounded-xl overflow-hidden">
+      <button onclick="closePreview()" class="absolute top-3 right-3 text-amber-400 hover:text-white text-xl">✕</button>
+      <iframe id="previewFrame" src="" class="w-full h-full rounded-xl"></iframe>
+    </div>
+  </div>
 
   <!-- Skills -->
   <section id="skills" class="py-24 px-8 md:px-20 bg-[#101218] border-t border-[#1f2937]">
@@ -167,6 +189,16 @@
   <script>
     gsap.from("section", { opacity: 0, y: 40, duration: 1, stagger: 0.3 });
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    function openPreview(url) {
+      document.getElementById("previewFrame").src = url;
+      document.getElementById("previewModal").classList.add("active");
+    }
+
+    function closePreview() {
+      document.getElementById("previewModal").classList.remove("active");
+      document.getElementById("previewFrame").src = "";
+    }
   </script>
 </body>
 </html>
