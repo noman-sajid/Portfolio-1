@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noman Sajid | Developer Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: #0b0c10;
+      color: #eaeaea;
+      overflow-x: hidden;
+    }
+
+    /* New blue-amber gradient */
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glow-border {
+      box-shadow: 0 0 25px #3b82f622;
+      border: 1px solid #3b82f655;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      transition: 0.25s ease;
+      box-shadow: 0 0 25px #3b82f655;
+      border-color: #f59e0b55;
+    }
+
+    /* Syntax highlighting with blue hue */
+    .syntax-key { color: #f59e0b; }
+    .syntax-value { color: #60a5fa; }
+    .syntax-string { color: #93c5fd; }
+    .syntax-comment { color: #6b7280; }
+
+    /* Editor window aesthetic */
+    .editor-bg {
+      background: linear-gradient(180deg, #15161a, #0f1013);
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+    }
+
+    a.btn {
+      border: 1px solid #3b82f6;
+      color: #93c5fd;
+    }
+
+    a.btn:hover {
+      background: linear-gradient(90deg, #3b82f6, #f59e0b);
+      color: black;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        flex-direction: column-reverse;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="fixed w-full top-0 left-0 z-30 bg-[#0b0c10]/80 backdrop-blur-md px-6 py-4 flex justify-between items-center border-b border-[#1f2937]">
+    <h1 class="text-2xl font-bold gradient-text">Noman Sajid</h1>
+    <ul class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
+      <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+      <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+      <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
+      <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex hero-grid items-center justify-center px-8 md:px-20 pt-28">
+    <div class="flex-1 space-y-6 text-center md:text-left">
+      <h2 class="text-5xl md:text-6xl font-bold gradient-text">Hi, I'm Noman</h2>
+      <p class="text-gray-400 max-w-md mx-auto md:mx-0">
+        I build digital experiences that merge logic, performance, and design — crafting code that *feels* alive.
+      </p>
+      <a href="#projects" class="inline-block mt-4 px-6 py-3 rounded-full btn glow-border transition">See My Work</a>
+    </div>
+    <div class="flex-1 flex justify-center mt-10 md:mt-0">
+      <div class="editor-bg glow-border p-5 w-[22rem]">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+          <span class="w-3 h-3 bg-yellow-400 rounded-full"></span>
+          <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+        </div>
+        <pre class="text-sm leading-relaxed">
+<span class="syntax-comment">// personal.config.js</span>
+<span class="syntax-key">const</span> <span class="syntax-value">noman</span> = {'{'}
+  <span class="syntax-key">skills</span>: [<span class="syntax-string">'React'</span>, <span class="syntax-string">'Next.js'</span>, <span class="syntax-string">'Node'</span>],
+  <span class="syntax-key">motto</span>: <span class="syntax-string">"Craft code that feels alive"</span>,
+  <span class="syntax-key">status</span>: <span class="syntax-string">"Open for opportunities 💡"</span>
+{'}'};
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 px-8 md:px-20 bg-[#101218] border-t border-[#1f2937]">
+    <h2 class="text-4xl font-bold text-center mb-10 gradient-text">About Me</h2>
+    <div class="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed text-center">
+      <p>I’m a self-taught developer from Pakistan, passionate about transforming abstract ideas into meaningful digital experiences. I blend psychology, logic, and UI design to build code that connects deeply with users.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 px-8 md:px-20 bg-[#0b0c10]">
+    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Projects</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Habisium</h3>
+        <p class="text-gray-400 text-sm mb-4">Offline-first habit tracker built with React, Redux Toolkit, and Workbox.</p>
+        <a href="#" class="text-amber-400 text-sm hover:underline">View Project →</a>
+      </div>
+      <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">E-commerce Platform</h3>
+        <p class="text-gray-400 text-sm mb-4">Full-stack MERN platform with authentication, filters, and sleek UI.</p>
+        <a href="#" class="text-amber-400 text-sm hover:underline">View Project →</a>
+      </div>
+      <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
+        <h3 class="text-xl font-semibold mb-3 text-blue-400">Interactive Portfolio</h3>
+        <p class="text-gray-400 text-sm mb-4">Scroll-based animated portfolio using GSAP and Tailwind transitions.</p>
+        <a href="#" class="text-amber-400 text-sm hover:underline">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-24 px-8 md:px-20 bg-[#101218] border-t border-[#1f2937]">
+    <h2 class="text-4xl font-bold text-center mb-10 gradient-text">Skills</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">React</div>
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Next.js</div>
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Node.js</div>
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Tailwind</div>
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Redux</div>
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">MongoDB</div>
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Express</div>
+      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">GSAP</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 px-8 md:px-20 text-center">
+    <h2 class="text-4xl font-bold mb-8 gradient-text">Contact</h2>
+    <p class="text-gray-400 mb-8">Let’s bring your ideas to life — one line of code at a time.</p>
+    <a href="mailto:nomansajid.dev@gmail.com" class="inline-block px-6 py-3 rounded-full btn glow-border transition">Get in Touch</a>
+  </section>
+
+  <footer class="py-6 text-center text-gray-600 border-t border-[#1f2937]">
+    © <span id="year"></span> Noman Sajid. All rights reserved.
+  </footer>
+
+  <script>
+    gsap.from("section", { opacity: 0, y: 40, duration: 1, stagger: 0.3 });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
