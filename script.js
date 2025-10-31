@@ -3,9 +3,27 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 // === HERO ANIMATIONS ===
 window.addEventListener("load", () => {
   const tl = gsap.timeline();
-  tl.from(".hero-title", { opacity: 0, y: 36, duration: 0.9, ease: "power2.out" })
-    .from(".hero-sub", { opacity: 0, y: 28, duration: 0.8, ease: "power2.out" }, "-=0.45")
-    .from(".hero-cta", { opacity: 0, y: 18, duration: 0.7, ease: "power2.out" }, "-=0.35");
+
+  tl.set(".hero-cta", { opacity: 0, y: 18 }); // make sure it's initially hidden but visible to GSAP
+
+  tl.from(".hero-title", { 
+      opacity: 0, 
+      y: 36, 
+      duration: 0.9, 
+      ease: "power2.out" 
+    })
+    .from(".hero-sub", { 
+      opacity: 0, 
+      y: 28, 
+      duration: 0.8, 
+      ease: "power2.out" 
+    }, "-=0.45")
+    .to(".hero-cta", { 
+      opacity: 1, 
+      y: 0, 
+      duration: 0.7, 
+      ease: "power2.out" 
+    }, "-=0.35");
 });
 
 // === SECTION SCROLL ANIMATIONS ===
@@ -37,7 +55,8 @@ document.querySelectorAll("nav a[href^='#']").forEach(anchor => {
 });
 
 // === YEAR ===
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // === IFRAME MODAL ===
 const previewModal = document.getElementById("previewModal");
@@ -45,6 +64,8 @@ const previewFrame = document.getElementById("previewFrame");
 const closeBtn = document.getElementById("closeBtn");
 
 function openPreview(url) {
+  if (!previewModal || !previewFrame) return;
+
   previewFrame.src = url;
   document.body.style.overflow = "hidden";
 
@@ -53,6 +74,8 @@ function openPreview(url) {
 }
 
 function closePreview() {
+  if (!previewModal || !previewFrame) return;
+
   gsap.to(previewModal, {
     opacity: 0,
     scale: 0.95,
@@ -66,11 +89,11 @@ function closePreview() {
   });
 }
 
-closeBtn.addEventListener("click", closePreview);
+if (closeBtn) closeBtn.addEventListener("click", closePreview);
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") closePreview();
 });
 
-// expose to HTML
+// expose globally
 window.openPreview = openPreview;
 window.closePreview = closePreview;
