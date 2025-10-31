@@ -1,85 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noman Sajid | Full-Stack Developer Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noman Sajid | Full-Stack Developer Portfolio</title>
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Portfolio of Noman Sajid — a full-stack developer specializing in React, Next.js, and Node.js. Explore projects, skills, and contact details." />
-  <meta name="keywords" content="Noman Sajid, full stack developer, React, Next.js, Node.js, JavaScript, web developer, portfolio" />
-  <meta name="author" content="Noman Sajid" />
+    <!-- SEO Meta -->
+    <meta
+      name="description"
+      content="Portfolio of Noman Sajid — a full-stack developer specializing in React, Next.js, and Node.js. Explore projects, skills, and contact details."
+    />
+    <meta
+      name="keywords"
+      content="Noman Sajid, full stack developer, React, Next.js, Node.js, JavaScript, web developer, portfolio"
+    />
+    <meta name="author" content="Noman Sajid" />
 
-  <!-- Open Graph / Social Preview -->
-  <meta property="og:title" content="Noman Sajid | Developer Portfolio" />
-  <meta property="og:description" content="Crafting digital experiences that merge logic, performance, and design." />
-  <meta property="og:image" content="https://yourdomain.com/preview.png" /> <!-- replace with an actual image -->
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:type" content="website" />
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:title" content="Noman Sajid | Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Crafting digital experiences that merge logic, performance, and design."
+    />
+    <meta property="og:image" content="https://yourdomain.com/preview.png" />
+    <!-- replace with an actual image -->
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:type" content="website" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Noman Sajid | Developer Portfolio" />
-  <meta name="twitter:description" content="Crafting code that feels alive — check out my latest projects and skills." />
-  <meta name="twitter:image" content="https://yourdomain.com/preview.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Noman Sajid | Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Crafting code that feels alive — check out my latest projects and skills."
+    />
+    <meta name="twitter:image" content="https://yourdomain.com/preview.png" />
 
-  <!-- Favicon -->
- 
-  <link rel="icon" href="favicon.ico">
+    <!-- Favicon -->
 
+    <link rel="icon" href="favicon.ico" />
 
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tailwind & Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- GSAP Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-  <!-- GSAP Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="fixed w-full top-0 left-0 z-50 bg-[#0b0c10]/80 backdrop-blur-md px-6 py-4 flex justify-between items-center border-b border-[#1f2937]"
+    >
+      <!-- Make the name clickable to go to hero section -->
+      <a
+        href="#home"
+        class="text-2xl font-bold gradient-text hover:opacity-80 transition"
+        >Noman Sajid</a
+      >
 
-<body>
-<!-- NAVBAR -->
-<nav class="fixed w-full top-0 left-0 z-50 bg-[#0b0c10]/80 backdrop-blur-md px-6 py-4 flex justify-between items-center border-b border-[#1f2937]">
-  <!-- Make the name clickable to go to hero section -->
-  <a href="#home" class="text-2xl font-bold gradient-text hover:opacity-80 transition">Noman Sajid</a>
+      <ul class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
+        <li>
+          <a href="#about" class="nav-link hover:text-blue-400 transition"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="nav-link hover:text-blue-400 transition"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#skills" class="nav-link hover:text-blue-400 transition"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="nav-link hover:text-blue-400 transition"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-  <ul class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
-    <li><a href="#about" class="nav-link hover:text-blue-400 transition">About</a></li>
-    <li><a href="#projects" class="nav-link hover:text-blue-400 transition">Projects</a></li>
-    <li><a href="#skills" class="nav-link hover:text-blue-400 transition">Skills</a></li>
-    <li><a href="#contact" class="nav-link hover:text-blue-400 transition">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 pt-24 md:pt-28 gap-12">
-  
+    <!-- HERO -->
+  <section 
+  id="home" 
+  class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 pt-24 md:pt-28 gap-12 md:gap-16"
+>
   <!-- LEFT: Text -->
-   <div class="flex-1 flex justify-center">
-    <div class="editor-bg glow-border p-5 w-full max-w-[20rem] sm:max-w-[22rem]">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-        <span class="w-3 h-3 bg-yellow-400 rounded-full"></span>
-        <span class="w-3 h-3 bg-green-500 rounded-full"></span>
-      </div>
-      <pre class="text-sm sm:text-base leading-relaxed overflow-x-auto">
-<span class="syntax-comment">// personal.config.js</span>
-<span class="syntax-key">const</span> <span class="syntax-value">noman</span> = {'{'}
-  <span class="syntax-key">skills</span>: [<span class="syntax-string">'React'</span>, <span class="syntax-string">'Next.js'</span>, <span class="syntax-string">'Node'</span>],
-  <span class="syntax-key">motto</span>: <span class="syntax-string">"Craft code that feels alive"</span>,
-  <span class="syntax-key">status</span>: <span class="syntax-string">"Open for opportunities 💡"</span>
-{'}'};
-      </pre>
-    </div>
-  </div>
- 
-
-  <!-- RIGHT: Code Editor Box -->
-   <div class="flex-1 space-y-6 text-center md:text-left hero-content">
+  <div class="flex-1 space-y-6 text-center md:text-left order-1 md:order-1 hero-content">
     <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold gradient-text hero-title">
       Hi, I'm Noman
     </h2>
@@ -96,101 +114,195 @@
     </a>
   </div>
 
-</section>
-
-
-
-  <!-- ABOUT -->
-  <section id="about" class="py-24 px-8 md:px-20 bg-[#101218] border-t border-[#1f2937]">
-    <h2 class="text-4xl font-bold text-center mb-10 gradient-text">About Me</h2>
-    <div class="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed text-center">
-      <p>I’m a self-taught developer from Pakistan, passionate about transforming abstract ideas into meaningful digital experiences. I blend psychology, logic, and UI design to build code that connects deeply with users.</p>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="py-24 px-8 md:px-20 bg-[#0b0c10]">
-    <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Projects</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
-        <h3 class="text-xl font-semibold mb-3 text-blue-400">Habisium</h3>
-        <p class="text-gray-400 text-sm mb-4">Offline-first habit tracker built with React, Redux Toolkit, and Workbox.</p>
-        <button onclick="openPreview('https://habisium.vercel.app/')" class="text-amber-400 text-sm hover:underline cursor-pointer">View Project →</button>
+  <!-- RIGHT: Code Editor Box -->
+  <div class="flex-1 flex justify-center order-2 md:order-2">
+    <div class="editor-bg glow-border p-5 sm:p-6 w-full max-w-[20rem] sm:max-w-[22rem] md:max-w-[24rem] lg:max-w-[26rem] rounded-2xl">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+        <span class="w-3 h-3 bg-yellow-400 rounded-full"></span>
+        <span class="w-3 h-3 bg-green-500 rounded-full"></span>
       </div>
-
-      <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
-        <h3 class="text-xl font-semibold mb-3 text-blue-400">Personal Site</h3>
-        <p class="text-gray-400 text-sm mb-4">Simple testing website built with HTML, CSS, and JS for early experimentation.</p>
-        <button onclick="openPreview('https://noman-sajid.github.io/personal-site/')" class="text-amber-400 text-sm hover:underline cursor-pointer">View Project →</button>
-      </div>
-
-      <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
-        <h3 class="text-xl font-semibold mb-3 text-blue-400">Auto Checkpoint</h3>
-        <p class="text-gray-400 text-sm mb-4">Professional automotive service site built for client showcasing car services.</p>
-        <button onclick="openPreview('http://www.auto-checkpoint.co.uk/')" class="text-amber-400 text-sm hover:underline cursor-pointer">View Project →</button>
-      </div>
+      <pre class="text-sm sm:text-base md:text-lg leading-relaxed whitespace-pre-wrap break-words">
+<span class="syntax-comment">// personal.config.js</span>
+<span class="syntax-key">const</span> <span class="syntax-value">noman</span> = {'{'}
+  <span class="syntax-key">skills</span>: [<span class="syntax-string">'React'</span>, <span class="syntax-string">'Next.js'</span>, <span class="syntax-string">'Node'</span>],
+  <span class="syntax-key">motto</span>: <span class="syntax-string">"Craft code that feels alive"</span>,
+  <span class="syntax-key">status</span>: <span class="syntax-string">"Open for opportunities 💡"</span>
+{'}'};
+      </pre>
     </div>
-  </section>
-
-  <!-- PREVIEW MODAL -->
-  <div id="previewModal" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center hidden z-50">
-    <div class="relative w-11/12 md:w-4/5 h-[80vh] bg-[#0d1117] rounded-2xl shadow-2xl overflow-hidden">
-     <button id="closeBtn" class="absolute top-3 right-3 bg-black/25 hover:bg-black/40 text-white rounded-full p-2 shadow-[0_0_10px_rgba(255,255,255,0.4)] transition z-10">✕</button>
-
-      <iframe id="previewFrame" class="w-full h-full border-0 rounded-xl" loading="lazy"></iframe>
-    </div>
-  </div>
-
-  <!-- SKILLS -->
-  <section id="skills" class="py-24 px-8 md:px-20 bg-[#101218] border-t border-[#1f2937]">
-    <h2 class="text-4xl font-bold text-center mb-10 gradient-text">Skills</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">React</div>
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Next.js</div>
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Node.js</div>
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Tailwind</div>
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Redux</div>
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">MongoDB</div>
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">Express</div>
-      <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">GSAP</div>
-    </div>
-  </section>
-
-<!-- CONTACT -->
-<section id="contact" class="py-24 px-8 md:px-20 text-center bg-black/30 backdrop-blur-md">
-  <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Contact</h2>
-  <p class="text-gray-400 max-w-2xl mx-auto mb-12 text-lg">
-    Let’s bring your ideas to life — one line of code at a time.
-  </p>
-
-  <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-    <!-- Email -->
-    <a 
-      href="mailto:nomansajid.dev@gmail.com"
-      class="inline-flex items-center gap-2 px-8 py-3 text-lg font-semibold rounded-full border border-white/20 hover:border-white/40 transition bg-white/5 hover:bg-white/10 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
-    >
-      📧 <span>nomansajid.dev@gmail.com</span>
-    </a>
-
-    <!-- WhatsApp -->
-    <a 
-      href="https://wa.me/923127364784"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-8 py-3 text-lg font-semibold rounded-full border border-green-500/30 hover:border-green-500/60 transition bg-green-500/10 hover:bg-green-500/20 backdrop-blur-md shadow-[0_0_20px_rgba(34,197,94,0.15)] hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]"
-    >
-      💬 <span>Chat on WhatsApp</span>
-    </a>
   </div>
 </section>
 
 
+    <!-- ABOUT -->
+    <section
+      id="about"
+      class="py-24 px-8 md:px-20 bg-[#101218] border-t border-[#1f2937]"
+    >
+      <h2 class="text-4xl font-bold text-center mb-10 gradient-text">
+        About Me
+      </h2>
+      <div
+        class="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed text-center"
+      >
+        <p>
+          I’m a self-taught developer from Pakistan, passionate about
+          transforming abstract ideas into meaningful digital experiences. I
+          blend psychology, logic, and UI design to build code that connects
+          deeply with users.
+        </p>
+      </div>
+    </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 px-8 md:px-20 bg-[#0b0c10]">
+      <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+        Projects
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
+          <h3 class="text-xl font-semibold mb-3 text-blue-400">Habisium</h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Offline-first habit tracker built with React, Redux Toolkit, and
+            Workbox.
+          </p>
+          <button
+            onclick="openPreview('https://habisium.vercel.app/')"
+            class="text-amber-400 text-sm hover:underline cursor-pointer"
+          >
+            View Project →
+          </button>
+        </div>
 
-  <footer class="py-6 text-center text-gray-600 border-t border-[#1f2937]">
-    © <span id="year"></span> Noman Sajid. All rights reserved.
-  </footer>
+        <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
+          <h3 class="text-xl font-semibold mb-3 text-blue-400">
+            Personal Site
+          </h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Simple testing website built with HTML, CSS, and JS for early
+            experimentation.
+          </p>
+          <button
+            onclick="openPreview('https://noman-sajid.github.io/personal-site/')"
+            class="text-amber-400 text-sm hover:underline cursor-pointer"
+          >
+            View Project →
+          </button>
+        </div>
 
-  <script src="script.js"></script>
-</body>
+        <div class="card bg-[#16181d] rounded-xl p-6 glow-border">
+          <h3 class="text-xl font-semibold mb-3 text-blue-400">
+            Auto Checkpoint
+          </h3>
+          <p class="text-gray-400 text-sm mb-4">
+            Professional automotive service site built for client showcasing car
+            services.
+          </p>
+          <button
+            onclick="openPreview('http://www.auto-checkpoint.co.uk/')"
+            class="text-amber-400 text-sm hover:underline cursor-pointer"
+          >
+            View Project →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIEW MODAL -->
+    <div
+      id="previewModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center hidden z-50"
+    >
+      <div
+        class="relative w-11/12 md:w-4/5 h-[80vh] bg-[#0d1117] rounded-2xl shadow-2xl overflow-hidden"
+      >
+        <button
+          id="closeBtn"
+          class="absolute top-3 right-3 bg-black/25 hover:bg-black/40 text-white rounded-full p-2 shadow-[0_0_10px_rgba(255,255,255,0.4)] transition z-10"
+        >
+          ✕
+        </button>
+
+        <iframe
+          id="previewFrame"
+          class="w-full h-full border-0 rounded-xl"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <section
+      id="skills"
+      class="py-24 px-8 md:px-20 bg-[#101218] border-t border-[#1f2937]"
+    >
+      <h2 class="text-4xl font-bold text-center mb-10 gradient-text">Skills</h2>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto text-center"
+      >
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          React
+        </div>
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          Next.js
+        </div>
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          Node.js
+        </div>
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          Tailwind
+        </div>
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          Redux
+        </div>
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          MongoDB
+        </div>
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          Express
+        </div>
+        <div class="p-5 bg-[#16181d] rounded-lg glow-border text-blue-300">
+          GSAP
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section
+      id="contact"
+      class="py-24 px-8 md:px-20 text-center bg-black/30 backdrop-blur-md"
+    >
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Contact</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto mb-12 text-lg">
+        Let’s bring your ideas to life — one line of code at a time.
+      </p>
+
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+        <!-- Email -->
+        <a
+          href="mailto:nomansajid.dev@gmail.com"
+          class="inline-flex items-center gap-2 px-8 py-3 text-lg font-semibold rounded-full border border-white/20 hover:border-white/40 transition bg-white/5 hover:bg-white/10 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+        >
+          📧 <span>nomansajid.dev@gmail.com</span>
+        </a>
+
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/923127364784"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-3 text-lg font-semibold rounded-full border border-green-500/30 hover:border-green-500/60 transition bg-green-500/10 hover:bg-green-500/20 backdrop-blur-md shadow-[0_0_20px_rgba(34,197,94,0.15)] hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]"
+        >
+          💬 <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="py-6 text-center text-gray-600 border-t border-[#1f2937]">
+      © <span id="year"></span> Noman Sajid. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
